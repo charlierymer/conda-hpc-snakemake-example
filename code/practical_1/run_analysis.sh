@@ -28,10 +28,10 @@ Rscript 0_get_conditions.R
 
 echo 'Starting analysis'
 
-
 {       read
         while IFS=, read -r line;
         do
+
                 Rscript 1_find_side_effects.R "${line}"
                 Rscript 2_plot_wordcloud.R "${line}"
         done
